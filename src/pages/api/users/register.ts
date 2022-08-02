@@ -1,12 +1,11 @@
 import { PrismaClient } from "@prisma/client";
-import { } from "next/server";
 import { NextApiRequest, NextApiResponse } from "next";
 const bcrypt = require("bcryptjs");
 
 const prisma = new PrismaClient()
 
 export default async function register(req: NextApiRequest, res: NextApiResponse) {
-    const { name , email, password,password2 } = req.body  
+    const { name , email, password ,password2 } = req.body  
     const exists = prisma.user.findMany({ where: { email } })
     if (!name || !email || !password) {
         res.status(400).send('Please provide a name, email and password')
