@@ -1,8 +1,7 @@
-import { PrismaClient } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
 const bcrypt = require("bcryptjs");
 
-const prisma = new PrismaClient()
+import { prisma } from '../../../db/client';
 
 export default async function register(req: NextApiRequest, res: NextApiResponse) {
     const { name , email, password ,password2 } = req.body  

@@ -1,8 +1,8 @@
 import {NextApiResponse , NextApiRequest} from 'next'
-import { PrismaClient } from '@prisma/client'
-import { exitCode } from 'process';
+// import { PrismaClient } from '@prisma/client'
 const bcrypt = require('bcryptjs');
-const prisma = new PrismaClient()
+// const prisma = new PrismaClient()
+import { prisma } from '../../../db/client';
 
 export default async function login(req :NextApiRequest, res :NextApiResponse){
     const {email,password} = req.body
@@ -11,7 +11,7 @@ export default async function login(req :NextApiRequest, res :NextApiResponse){
         where: {email},
     })
 
-    console.log(user)
+    // console.log(user)
 
 
     if(user.length === 0){
@@ -22,5 +22,7 @@ export default async function login(req :NextApiRequest, res :NextApiResponse){
     }
     else 
         res.status(200).send(user[0])
+        const User =  user[0]
+        return User
     }
 
