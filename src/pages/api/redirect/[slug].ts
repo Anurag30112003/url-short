@@ -22,7 +22,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   if ((await exists).length > 0) {
     const url = (await exists)[0].url;
-    router.push(url);
-    res.send("Redirect successfull");
+    res.writeHead(302, { Location: url });
+    res.end();
+
   }
 };
