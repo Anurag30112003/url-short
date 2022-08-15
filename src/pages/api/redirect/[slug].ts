@@ -21,7 +21,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   });
 
   if ((await exists).length > 0) {
-    const url = (await exists)[0].url;
+   const url = (await exists)[0].url; 
     res.writeHead(302, { Location: url });
     res.end();
 
