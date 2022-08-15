@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 
 import { prisma } from '../../../db/client';
 
-export default async function register(req: NextApiRequest, res: NextApiResponse) {
+export default async function register(req: NextApiRequest, res: NextApiResponse)   {
     const { name , email, password ,password2 } = req.body  
     const exists = prisma.user.findMany({ where: { email } })
     if (!name || !email || !password) {
