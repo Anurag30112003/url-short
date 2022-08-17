@@ -16,7 +16,7 @@ const create:NextPage = () => {
     <form>
     <input type="text" value={formData} onChange={(e) => setFormData(e.target.value)} />
     <button onClick={() => {
-        console.log(url);
+        console.log(formData);
     } }>Create</button>
     </form>
         
