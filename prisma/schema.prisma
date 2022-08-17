@@ -18,7 +18,7 @@ model User{
   password String 
   email String @unique
   createdAt DateTime @default(now())
-  // url Url[]
+  // Link Link[] 
 }
 
 model Link{

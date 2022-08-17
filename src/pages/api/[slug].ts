@@ -1,7 +1,6 @@
 import { prisma } from "../../db/client";
-import { useRouter } from "next/router";
 import { NextApiRequest, NextApiResponse } from "next";
-// import { NextRequest, NextResponse } from "next/server";
+
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
 
