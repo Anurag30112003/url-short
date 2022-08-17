@@ -1,6 +1,7 @@
 import { prisma } from "../../../db/client";
 import { useRouter } from "next/router";
 import { NextApiRequest, NextApiResponse } from "next";
+// import { NextRequest, NextResponse } from "next/server";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const router = useRouter();
@@ -19,6 +20,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       url: true,
     },
   });
+
 
   if ((await exists).length > 0) {
    const url = (await exists)[0].url; 
