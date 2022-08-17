@@ -13,6 +13,11 @@ export default async function createUrl(
       slug,
     },
   });
+
+  // check if url is correct
+
+  if(link.startsWith("http://") || link.startsWith("https://")){
+  
   if ((await exists).length > 0) {
     res.status(400).send("Url already exists");
   } else {
@@ -24,4 +29,8 @@ export default async function createUrl(
     });
     res.status(201).json(Url);
   }
+}
+else{
+  res.status(400).send("Url is not correct");
+}
 }
