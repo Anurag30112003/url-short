@@ -4,7 +4,6 @@
 generator client {
   provider = "prisma-client-js"
   previewFeatures = ["referentialIntegrity"]
-  binaryTargets = ["native"]
 }
 
 datasource db {
@@ -22,11 +21,12 @@ model User{
   // url Url[]
 }
 
-model Url{
+model Link{
   id String @id @default(uuid())
-  url String 
+  url String  @db.VarChar(2000)
   slug String @unique
   createdAt DateTime @default(now())
+  @@index(slug)
   // user User @relation(fields: [userId], references: [id])
   // userId String   
 }

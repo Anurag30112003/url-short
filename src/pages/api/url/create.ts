@@ -8,7 +8,7 @@ export default async function createUrl(
   res: NextApiResponse
 ) {
   const { link, slug } = req.body;
-  const exists = prisma.url.findMany({
+  const exists = prisma.link.findMany({
     where: {
       slug,
     },
@@ -16,7 +16,7 @@ export default async function createUrl(
   if ((await exists).length > 0) {
     res.status(400).send("Url already exists");
   } else {
-    const Url = await prisma.url.create({
+    const Url = await prisma.link.create({
       data: {
         url: link,
         slug,
