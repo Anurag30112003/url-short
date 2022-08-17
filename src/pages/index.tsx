@@ -12,7 +12,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex  text-2xl text-center">
+      <div className="flex text-2xl text-center">
         <h1>Url Shortner 🔗</h1>
         <p>Created using NextJS , Planetscale , Typescript !! 🔥</p>
       </div>
