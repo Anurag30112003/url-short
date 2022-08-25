@@ -21,8 +21,6 @@ export default async function login(req :NextApiRequest, res :NextApiResponse){
         res.status(400).send('Password is incorrect')
     }
     else 
-        res.status(200).send(user[0])
-        const User =  user[0]
-        return User
+        res.status(200).send(user[0].email)
     }
 
