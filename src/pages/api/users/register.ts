@@ -25,5 +25,5 @@ export default async function register(req: NextApiRequest, res: NextApiResponse
         password : hashedPassword,
         }
     })
-    res.status(201).json(user)
+    res.status(201).json([user.email,user.name])
     }}
